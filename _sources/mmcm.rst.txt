@@ -1,0 +1,162 @@
+MMCM
+====
+
+Register Listing for MMCM
+-------------------------
+
++------------------------------------------+-------------------------------------+
+| Register                                 | Address                             |
++==========================================+=====================================+
+| :ref:`MMCM_DRP_RESET <MMCM_DRP_RESET>`   | :ref:`0xf0005800 <MMCM_DRP_RESET>`  |
++------------------------------------------+-------------------------------------+
+| :ref:`MMCM_DRP_LOCKED <MMCM_DRP_LOCKED>` | :ref:`0xf0005804 <MMCM_DRP_LOCKED>` |
++------------------------------------------+-------------------------------------+
+| :ref:`MMCM_DRP_READ <MMCM_DRP_READ>`     | :ref:`0xf0005808 <MMCM_DRP_READ>`   |
++------------------------------------------+-------------------------------------+
+| :ref:`MMCM_DRP_WRITE <MMCM_DRP_WRITE>`   | :ref:`0xf000580c <MMCM_DRP_WRITE>`  |
++------------------------------------------+-------------------------------------+
+| :ref:`MMCM_DRP_DRDY <MMCM_DRP_DRDY>`     | :ref:`0xf0005810 <MMCM_DRP_DRDY>`   |
++------------------------------------------+-------------------------------------+
+| :ref:`MMCM_DRP_ADR <MMCM_DRP_ADR>`       | :ref:`0xf0005814 <MMCM_DRP_ADR>`    |
++------------------------------------------+-------------------------------------+
+| :ref:`MMCM_DRP_DAT_W <MMCM_DRP_DAT_W>`   | :ref:`0xf0005818 <MMCM_DRP_DAT_W>`  |
++------------------------------------------+-------------------------------------+
+| :ref:`MMCM_DRP_DAT_R <MMCM_DRP_DAT_R>`   | :ref:`0xf000581c <MMCM_DRP_DAT_R>`  |
++------------------------------------------+-------------------------------------+
+
+MMCM_DRP_RESET
+^^^^^^^^^^^^^^
+
+`Address: 0xf0005800 + 0x0 = 0xf0005800`
+
+
+    .. wavedrom::
+        :caption: MMCM_DRP_RESET
+
+        {
+            "reg": [
+                {"name": "drp_reset", "bits": 1},
+                {"bits": 31},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
+MMCM_DRP_LOCKED
+^^^^^^^^^^^^^^^
+
+`Address: 0xf0005800 + 0x4 = 0xf0005804`
+
+
+    .. wavedrom::
+        :caption: MMCM_DRP_LOCKED
+
+        {
+            "reg": [
+                {"name": "drp_locked", "bits": 1},
+                {"bits": 31},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
+MMCM_DRP_READ
+^^^^^^^^^^^^^
+
+`Address: 0xf0005800 + 0x8 = 0xf0005808`
+
+
+    .. wavedrom::
+        :caption: MMCM_DRP_READ
+
+        {
+            "reg": [
+                {"name": "drp_read", "bits": 1},
+                {"bits": 31},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
+MMCM_DRP_WRITE
+^^^^^^^^^^^^^^
+
+`Address: 0xf0005800 + 0xc = 0xf000580c`
+
+
+    .. wavedrom::
+        :caption: MMCM_DRP_WRITE
+
+        {
+            "reg": [
+                {"name": "drp_write", "bits": 1},
+                {"bits": 31},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
+MMCM_DRP_DRDY
+^^^^^^^^^^^^^
+
+`Address: 0xf0005800 + 0x10 = 0xf0005810`
+
+
+    .. wavedrom::
+        :caption: MMCM_DRP_DRDY
+
+        {
+            "reg": [
+                {"name": "drp_drdy", "bits": 1},
+                {"bits": 31},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
+MMCM_DRP_ADR
+^^^^^^^^^^^^
+
+`Address: 0xf0005800 + 0x14 = 0xf0005814`
+
+
+    .. wavedrom::
+        :caption: MMCM_DRP_ADR
+
+        {
+            "reg": [
+                {"name": "drp_adr[6:0]", "bits": 7},
+                {"bits": 25},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
+MMCM_DRP_DAT_W
+^^^^^^^^^^^^^^
+
+`Address: 0xf0005800 + 0x18 = 0xf0005818`
+
+
+    .. wavedrom::
+        :caption: MMCM_DRP_DAT_W
+
+        {
+            "reg": [
+                {"name": "drp_dat_w[15:0]", "bits": 16},
+                {"bits": 16},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+        }
+
+
+MMCM_DRP_DAT_R
+^^^^^^^^^^^^^^
+
+`Address: 0xf0005800 + 0x1c = 0xf000581c`
+
+
+    .. wavedrom::
+        :caption: MMCM_DRP_DAT_R
+
+        {
+            "reg": [
+                {"name": "drp_dat_r[15:0]", "bits": 16},
+                {"bits": 16},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+        }
+
+

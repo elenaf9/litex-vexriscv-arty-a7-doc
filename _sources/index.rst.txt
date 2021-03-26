@@ -1,0 +1,53 @@
+
+Documentation for LiteX SoC Project
+===================================
+
+
+
+Modules
+=======
+
+.. toctree::
+    :maxdepth: 1
+
+    interrupts
+
+Register Groups
+===============
+
+.. toctree::
+    :maxdepth: 1
+
+    ctrl
+    uart
+    timer0
+    identifier_mem
+    uart_phy
+    ddrphy
+    sdram
+    ethphy
+    ethmac
+    leds
+    mmcm
+    spiflash
+    sdphy
+    sdcore
+    sdblock2mem
+    sdmem2block
+    sdirq
+    rgb_led_r0
+    rgb_led_g0
+    rgb_led_b0
+    switches
+    spi
+    i2c0
+    xadc
+    icap_bit
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

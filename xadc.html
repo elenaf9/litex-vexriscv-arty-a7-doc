@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XADC &#8212; LiteX SoC Project  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/default.js"></script>
+    <script src="_static/WaveDrom.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ICAP_BIT" href="icap_bit.html" />
+    <link rel="prev" title="I2C0" href="i2c0.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="xadc">
+<h1>XADC<a class="headerlink" href="#xadc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="register-listing-for-xadc">
+<h2>Register Listing for XADC<a class="headerlink" href="#register-listing-for-xadc" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 54%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Register</p></th>
+<th class="head"><p>Address</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#xadc-temperature"><span class="std std-ref">XADC_TEMPERATURE</span></a></p></td>
+<td><p><a class="reference internal" href="#xadc-temperature"><span class="std std-ref">0xf000c000</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xadc-vccint"><span class="std std-ref">XADC_VCCINT</span></a></p></td>
+<td><p><a class="reference internal" href="#xadc-vccint"><span class="std std-ref">0xf000c004</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xadc-vccaux"><span class="std std-ref">XADC_VCCAUX</span></a></p></td>
+<td><p><a class="reference internal" href="#xadc-vccaux"><span class="std std-ref">0xf000c008</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xadc-vccbram"><span class="std std-ref">XADC_VCCBRAM</span></a></p></td>
+<td><p><a class="reference internal" href="#xadc-vccbram"><span class="std std-ref">0xf000c00c</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#xadc-eoc"><span class="std std-ref">XADC_EOC</span></a></p></td>
+<td><p><a class="reference internal" href="#xadc-eoc"><span class="std std-ref">0xf000c010</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xadc-eos"><span class="std std-ref">XADC_EOS</span></a></p></td>
+<td><p><a class="reference internal" href="#xadc-eos"><span class="std std-ref">0xf000c014</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="xadc-temperature">
+<h3>XADC_TEMPERATURE<a class="headerlink" href="#xadc-temperature" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf000c000 + 0x0 = 0xf000c000</cite></p>
+<blockquote>
+<div><p>Raw Temperature value from XADC.</p>
+<p>Temperature (°C) = <code class="docutils literal notranslate"><span class="pre">Value</span></code> x 503.975 / 4096 - 273.15.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "temperature[11:0]", "bits": 12},
+        {"bits": 20},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="xadc-vccint">
+<h3>XADC_VCCINT<a class="headerlink" href="#xadc-vccint" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf000c000 + 0x4 = 0xf000c004</cite></p>
+<blockquote>
+<div><p>Raw VCCINT value from XADC.</p>
+<p>VCCINT (V) = <code class="docutils literal notranslate"><span class="pre">Value</span></code> x 3 / 4096.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "vccint[11:0]", "bits": 12},
+        {"bits": 20},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="xadc-vccaux">
+<h3>XADC_VCCAUX<a class="headerlink" href="#xadc-vccaux" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf000c000 + 0x8 = 0xf000c008</cite></p>
+<blockquote>
+<div><p>Raw VCCAUX value from XADC.</p>
+<p>VCCAUX (V) = <code class="docutils literal notranslate"><span class="pre">Value</span></code> x 3 / 4096.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "vccaux[11:0]", "bits": 12},
+        {"bits": 20},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="xadc-vccbram">
+<h3>XADC_VCCBRAM<a class="headerlink" href="#xadc-vccbram" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf000c000 + 0xc = 0xf000c00c</cite></p>
+<blockquote>
+<div><p>Raw VCCBRAM value from XADC.</p>
+<p>VCCBRAM (V) = <code class="docutils literal notranslate"><span class="pre">Value</span></code> x 3 / 4096.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "vccbram[11:0]", "bits": 12},
+        {"bits": 20},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="xadc-eoc">
+<h3>XADC_EOC<a class="headerlink" href="#xadc-eoc" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf000c000 + 0x10 = 0xf000c010</cite></p>
+<blockquote>
+<div><p>End of Convertion Status, <code class="docutils literal notranslate"><span class="pre">1</span></code>: Convertion Done.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "eoc", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="xadc-eos">
+<h3>XADC_EOS<a class="headerlink" href="#xadc-eos" title="Permalink to this headline">¶</a></h3>
+<p><cite>Address: 0xf000c000 + 0x14 = 0xf000c014</cite></p>
+<blockquote>
+<div><p>End of Sequence Status, <code class="docutils literal notranslate"><span class="pre">1</span></code>: Sequence Done.</p>
+
+<div style="overflow-x:auto">
+<script type="WaveDrom">
+{
+    "reg": [
+        {"name": "eos", "bits": 1},
+        {"bits": 31},
+    ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+}
+</script>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        function init() {
+            WaveDrom.ProcessAll();
+        }
+        window.onload = init;
+    </script>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">LiteX SoC Project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="interrupts.html">Interrupt Controller</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ctrl.html">CTRL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart.html">UART</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer0.html">TIMER0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifier_mem.html">IDENTIFIER_MEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uart_phy.html">UART_PHY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ddrphy.html">DDRPHY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdram.html">SDRAM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ethphy.html">ETHPHY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ethmac.html">ETHMAC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leds.html">LEDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mmcm.html">MMCM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spiflash.html">SPIFLASH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdphy.html">SDPHY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdcore.html">SDCORE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdblock2mem.html">SDBLOCK2MEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdmem2block.html">SDMEM2BLOCK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdirq.html">SDIRQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rgb_led_r0.html">RGB_LED_R0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rgb_led_g0.html">RGB_LED_G0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rgb_led_b0.html">RGB_LED_B0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switches.html">SWITCHES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spi.html">SPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c0.html">I2C0</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XADC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="icap_bit.html">ICAP_BIT</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="i2c0.html" title="previous chapter">I2C0</a></li>
+      <li>Next: <a href="icap_bit.html" title="next chapter">ICAP_BIT</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Anonymous.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/xadc.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,154 @@
+SPI
+===
+
+Register Listing for SPI
+------------------------
+
++------------------------------------+----------------------------------+
+| Register                           | Address                          |
++====================================+==================================+
+| :ref:`SPI_CONTROL <SPI_CONTROL>`   | :ref:`0xf000b000 <SPI_CONTROL>`  |
++------------------------------------+----------------------------------+
+| :ref:`SPI_STATUS <SPI_STATUS>`     | :ref:`0xf000b004 <SPI_STATUS>`   |
++------------------------------------+----------------------------------+
+| :ref:`SPI_MOSI <SPI_MOSI>`         | :ref:`0xf000b008 <SPI_MOSI>`     |
++------------------------------------+----------------------------------+
+| :ref:`SPI_MISO <SPI_MISO>`         | :ref:`0xf000b00c <SPI_MISO>`     |
++------------------------------------+----------------------------------+
+| :ref:`SPI_CS <SPI_CS>`             | :ref:`0xf000b010 <SPI_CS>`       |
++------------------------------------+----------------------------------+
+| :ref:`SPI_LOOPBACK <SPI_LOOPBACK>` | :ref:`0xf000b014 <SPI_LOOPBACK>` |
++------------------------------------+----------------------------------+
+
+SPI_CONTROL
+^^^^^^^^^^^
+
+`Address: 0xf000b000 + 0x0 = 0xf000b000`
+
+    SPI Control.
+
+    .. wavedrom::
+        :caption: SPI_CONTROL
+
+        {
+            "reg": [
+                {"name": "start",  "type": 4, "bits": 1},
+                {"bits": 7},
+                {"name": "length",  "bits": 8},
+                {"bits": 16}
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
++--------+--------+-------------------------------+
+| Field  | Name   | Description                   |
++========+========+===============================+
+| [0]    | START  | Write ``1`` to start SPI Xfer |
++--------+--------+-------------------------------+
+| [15:8] | LENGTH | SPI Xfer length (in bits).    |
++--------+--------+-------------------------------+
+
+SPI_STATUS
+^^^^^^^^^^
+
+`Address: 0xf000b000 + 0x4 = 0xf000b004`
+
+    SPI Status.
+
+    .. wavedrom::
+        :caption: SPI_STATUS
+
+        {
+            "reg": [
+                {"name": "done",  "bits": 1},
+                {"bits": 31}
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
++-------+------+-----------------------------------+
+| Field | Name | Description                       |
++=======+======+===================================+
+| [0]   | DONE | SPI Xfer done when read as ``1``. |
++-------+------+-----------------------------------+
+
+SPI_MOSI
+^^^^^^^^
+
+`Address: 0xf000b000 + 0x8 = 0xf000b008`
+
+    SPI MOSI data (MSB-first serialization).
+
+    .. wavedrom::
+        :caption: SPI_MOSI
+
+        {
+            "reg": [
+                {"name": "mosi[7:0]", "bits": 8},
+                {"bits": 24},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+        }
+
+
+SPI_MISO
+^^^^^^^^
+
+`Address: 0xf000b000 + 0xc = 0xf000b00c`
+
+    SPI MISO data (MSB-first de-serialization).
+
+    .. wavedrom::
+        :caption: SPI_MISO
+
+        {
+            "reg": [
+                {"name": "miso[7:0]", "bits": 8},
+                {"bits": 24},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+        }
+
+
+SPI_CS
+^^^^^^
+
+`Address: 0xf000b000 + 0x10 = 0xf000b010`
+
+    SPI Chip Select.
+
+    .. wavedrom::
+        :caption: SPI_CS
+
+        {
+            "reg": [
+                {"name": "sel",  "attr": '1', "bits": 1},
+                {"bits": 31}
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
++-------+------+-----------------------------------------------------------+
+| Field | Name | Description                                               |
++=======+======+===========================================================+
+| [0]   | SEL  | Write ``1`` to corresponding bit to enable Xfer for chip. |
++-------+------+-----------------------------------------------------------+
+
+SPI_LOOPBACK
+^^^^^^^^^^^^
+
+`Address: 0xf000b000 + 0x14 = 0xf000b014`
+
+    SPI loopback mode.
+
+    Write ``1`` to enable MOSI to MISO internal loopback.
+
+    .. wavedrom::
+        :caption: SPI_LOOPBACK
+
+        {
+            "reg": [
+                {"name": "loopback", "bits": 1},
+                {"bits": 31},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+

@@ -1,0 +1,75 @@
+RGB_LED_R0
+==========
+
+Register Listing for RGB_LED_R0
+-------------------------------
+
++----------------------------------------------+---------------------------------------+
+| Register                                     | Address                               |
++==============================================+=======================================+
+| :ref:`RGB_LED_R0_ENABLE <RGB_LED_R0_ENABLE>` | :ref:`0xf0009000 <RGB_LED_R0_ENABLE>` |
++----------------------------------------------+---------------------------------------+
+| :ref:`RGB_LED_R0_WIDTH <RGB_LED_R0_WIDTH>`   | :ref:`0xf0009004 <RGB_LED_R0_WIDTH>`  |
++----------------------------------------------+---------------------------------------+
+| :ref:`RGB_LED_R0_PERIOD <RGB_LED_R0_PERIOD>` | :ref:`0xf0009008 <RGB_LED_R0_PERIOD>` |
++----------------------------------------------+---------------------------------------+
+
+RGB_LED_R0_ENABLE
+^^^^^^^^^^^^^^^^^
+
+`Address: 0xf0009000 + 0x0 = 0xf0009000`
+
+    PWM Enable.
+
+    Write ``1`` to enable PWM.
+
+    .. wavedrom::
+        :caption: RGB_LED_R0_ENABLE
+
+        {
+            "reg": [
+                {"name": "enable", "bits": 1},
+                {"bits": 31},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
+RGB_LED_R0_WIDTH
+^^^^^^^^^^^^^^^^
+
+`Address: 0xf0009000 + 0x4 = 0xf0009004`
+
+    PWM Width.
+
+    Defines the *Duty cycle* of the PWM. PWM is active high for *Width* ``sys_clk``
+    cycles and active low for *Period - Width* ``sys_clk`` cycles.
+
+    .. wavedrom::
+        :caption: RGB_LED_R0_WIDTH
+
+        {
+            "reg": [
+                {"name": "width[31:0]", "bits": 32}
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+        }
+
+
+RGB_LED_R0_PERIOD
+^^^^^^^^^^^^^^^^^
+
+`Address: 0xf0009000 + 0x8 = 0xf0009008`
+
+    PWM Period.
+
+    Defines the *Period* of the PWM in ``sys_clk`` cycles.
+
+    .. wavedrom::
+        :caption: RGB_LED_R0_PERIOD
+
+        {
+            "reg": [
+                {"name": "period[31:0]", "bits": 32}
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+        }
+
+

@@ -1,0 +1,47 @@
+ICAP_BIT
+========
+
+Register Listing for ICAP_BIT
+-----------------------------
+
++--------------------------------------------------+-----------------------------------------+
+| Register                                         | Address                                 |
++==================================================+=========================================+
+| :ref:`ICAP_BIT_SINK_DATA <ICAP_BIT_SINK_DATA>`   | :ref:`0xf000c800 <ICAP_BIT_SINK_DATA>`  |
++--------------------------------------------------+-----------------------------------------+
+| :ref:`ICAP_BIT_SINK_READY <ICAP_BIT_SINK_READY>` | :ref:`0xf000c804 <ICAP_BIT_SINK_READY>` |
++--------------------------------------------------+-----------------------------------------+
+
+ICAP_BIT_SINK_DATA
+^^^^^^^^^^^^^^^^^^
+
+`Address: 0xf000c800 + 0x0 = 0xf000c800`
+
+
+    .. wavedrom::
+        :caption: ICAP_BIT_SINK_DATA
+
+        {
+            "reg": [
+                {"name": "sink_data[31:0]", "bits": 32}
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 1 }, "options": {"hspace": 400, "bits": 32, "lanes": 1}
+        }
+
+
+ICAP_BIT_SINK_READY
+^^^^^^^^^^^^^^^^^^^
+
+`Address: 0xf000c800 + 0x4 = 0xf000c804`
+
+
+    .. wavedrom::
+        :caption: ICAP_BIT_SINK_READY
+
+        {
+            "reg": [
+                {"name": "sink_ready", "bits": 1},
+                {"bits": 31},
+            ], "config": {"hspace": 400, "bits": 32, "lanes": 4 }, "options": {"hspace": 400, "bits": 32, "lanes": 4}
+        }
+
+
